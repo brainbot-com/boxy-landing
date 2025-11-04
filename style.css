@@ -165,6 +165,25 @@ body {
 }
 
 /* ========================================
+   PRODUCT SHOWCASE
+   ======================================== */
+
+.product-showcase {
+    padding: var(--spacing-lg) 0;
+    background: white;
+}
+
+.product-hero-image {
+    width: 100%;
+    max-width: 1000px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+/* ========================================
    VALUE PROPOSITIONS
    ======================================== */
 
@@ -233,43 +252,63 @@ body {
     background: var(--cream);
 }
 
-.steps {
+.steps-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: 1fr 1fr;
     gap: var(--spacing-lg);
+    align-items: center;
     margin-top: var(--spacing-lg);
 }
 
+.steps {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
 .step {
-    text-align: center;
+    text-align: left;
 }
 
 .step-number {
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
     background: var(--blue);
     color: white;
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: 900;
     border-radius: 50%;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto var(--spacing-md);
-}
-
-.step-title {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--dark-grey);
     margin-bottom: var(--spacing-sm);
 }
 
+.step-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--dark-grey);
+    margin-bottom: var(--spacing-xs);
+}
+
 .step-text {
-    font-size: 1rem;
+    font-size: 0.95rem;
     color: #555;
-    max-width: 400px;
-    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.product-detail-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.detail-image {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
 }
 
 /* ========================================
@@ -517,6 +556,23 @@ body {
    ======================================== */
 
 @media (max-width: 768px) {
+    .steps-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .product-detail-image {
+        order: -1;
+        margin-bottom: var(--spacing-md);
+    }
+    
+    .step {
+        text-align: center;
+    }
+    
+    .step-number {
+        margin: 0 auto var(--spacing-sm);
+    }
+    
     .comparison-table {
         font-size: 0.85rem;
     }
