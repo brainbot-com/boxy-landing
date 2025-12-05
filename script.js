@@ -1,5 +1,5 @@
 // ========================================
-// BOXY LANDING PAGE - JavaScript
+// INDIE LANDING PAGE - JavaScript
 // Form handling, analytics, tracking
 // ========================================
 
@@ -10,51 +10,53 @@ const CONFIG = {
     matomoSiteId: 1,
 };
 
+
+
 // ========================================
 // Email Form Handling
 // ========================================
 
 function setupEmailForms() {
     const forms = document.querySelectorAll('.email-form');
-    
+
     forms.forEach(form => {
         form.addEventListener('submit', async (e) => {
             e.preventDefault();
-            
+
             const emailInput = form.querySelector('.email-input');
             const submitButton = form.querySelector('.cta-button');
             const email = emailInput.value.trim();
-            
+
             if (!isValidEmail(email)) {
                 showMessage(form, 'Please enter a valid email address.', 'error');
                 return;
             }
-            
+
             // Disable form while submitting
             submitButton.disabled = true;
             submitButton.textContent = 'Submitting...';
-            
+
             try {
                 await submitEmail(email, form.id);
-                
+
                 // Track conversion
                 trackEvent('Email Signup', 'Submit', form.id);
-                
+
                 // Success
                 showMessage(form, '✓ You\'re on the list! Check your email for confirmation.', 'success');
                 emailInput.value = '';
-                
+
                 // Redirect to thank you page after 2 seconds
                 setTimeout(() => {
                     window.location.href = 'thank-you.html';
                 }, 2000);
-                
+
             } catch (error) {
                 console.error('Form submission error:', error);
                 showMessage(form, 'Something went wrong. Please try again.', 'error');
             } finally {
                 submitButton.disabled = false;
-                submitButton.textContent = form.id === 'heroForm' ? 'Get Early Access' : 'Join the Waitlist';
+                submitButton.textContent = form.id === 'heroForm' ? 'INITIATE_ACCESS' : 'SECURE_ALLOCATION';
             }
         });
     });
@@ -67,10 +69,10 @@ function isValidEmail(email) {
 
 async function submitEmail(email, formId) {
     // TODO: Replace with actual form submission endpoint (Formspree, Mailchimp, custom API)
-    
+
     // For now, log to console (development)
     console.log('Email submitted:', { email, formId, timestamp: new Date().toISOString() });
-    
+
     // Simulate API call
     return new Promise((resolve) => {
         setTimeout(() => {
@@ -78,11 +80,11 @@ async function submitEmail(email, formId) {
             const submissions = JSON.parse(localStorage.getItem('emailSubmissions') || '[]');
             submissions.push({ email, formId, timestamp: new Date().toISOString() });
             localStorage.setItem('emailSubmissions', JSON.stringify(submissions));
-            
+
             resolve({ success: true });
         }, 500);
     });
-    
+
     /* Uncomment when using Formspree:
     const response = await fetch(CONFIG.formEndpoint, {
         method: 'POST',
@@ -109,7 +111,7 @@ function showMessage(form, message, type) {
     if (existingMsg) {
         existingMsg.remove();
     }
-    
+
     // Create new message
     const msgDiv = document.createElement('div');
     msgDiv.className = `form-message ${type}`;
@@ -123,9 +125,9 @@ function showMessage(form, message, type) {
         background: ${type === 'success' ? '#00CC66' : '#FF6B6B'};
         color: white;
     `;
-    
+
     form.appendChild(msgDiv);
-    
+
     // Auto-remove after 5 seconds (if not success)
     if (type !== 'success') {
         setTimeout(() => msgDiv.remove(), 5000);
@@ -142,30 +144,30 @@ function setupAnalytics() {
         var _paq = window._paq = window._paq || [];
         _paq.push(['trackPageView']);
         _paq.push(['enableLinkTracking']);
-        
-        (function() {
+
+        (function () {
             var u = CONFIG.matomoUrl;
-            _paq.push(['setTrackerUrl', u+'matomo.php']);
+            _paq.push(['setTrackerUrl', u + 'matomo.php']);
             _paq.push(['setSiteId', CONFIG.matomoSiteId]);
             var d = document, g = d.createElement('script'), s = d.getElementsByTagName('script')[0];
-            g.async = true; g.src = u+'matomo.js';
+            g.async = true; g.src = u + 'matomo.js';
             s.parentNode.insertBefore(g, s);
         })();
     }
-    
+
     // Track scroll depth
     setupScrollTracking();
-    
+
     // Track CTA clicks
     setupCTATracking();
-    
+
     // Track FAQ interactions
     setupFAQTracking();
 }
 
 function trackEvent(category, action, name) {
     console.log('Event tracked:', { category, action, name });
-    
+
     // Matomo
     if (window._paq) {
         window._paq.push(['trackEvent', category, action, name]);
@@ -175,10 +177,10 @@ function trackEvent(category, action, name) {
 function setupScrollTracking() {
     const thresholds = [25, 50, 75, 100];
     const tracked = new Set();
-    
+
     window.addEventListener('scroll', () => {
         const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
-        
+
         thresholds.forEach(threshold => {
             if (scrollPercent >= threshold && !tracked.has(threshold)) {
                 tracked.add(threshold);
@@ -215,17 +217,17 @@ function setupFAQTracking() {
 function trackUTMParameters() {
     const params = new URLSearchParams(window.location.search);
     const utmParams = {};
-    
+
     ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'].forEach(param => {
         if (params.has(param)) {
             utmParams[param] = params.get(param);
         }
     });
-    
+
     if (Object.keys(utmParams).length > 0) {
         console.log('UTM Parameters:', utmParams);
         localStorage.setItem('utm_params', JSON.stringify(utmParams));
-        
+
         // Track campaign visit
         trackEvent('Campaign', 'Visit', utmParams.utm_campaign || 'unknown');
     }
@@ -242,7 +244,7 @@ function trackPagePerformance() {
             if (perfData) {
                 const loadTime = perfData.loadEventEnd - perfData.fetchStart;
                 console.log('Page load time:', Math.round(loadTime), 'ms');
-                
+
                 // Track if load time is slow
                 if (loadTime > 3000) {
                     trackEvent('Performance', 'Slow Load', `${Math.round(loadTime)}ms`);
@@ -261,10 +263,10 @@ document.addEventListener('DOMContentLoaded', () => {
     setupAnalytics();
     trackUTMParameters();
     trackPagePerformance();
-    
-    console.log('🚀 Boxy landing page loaded');
-    console.log('📧 Email submissions are being stored locally (see localStorage)');
-    console.log('📊 Replace CONFIG values with production endpoints');
+
+    console.log('🚀 INDIE PLATFORM: SYSTEM_ONLINE');
+    console.log('📧 STORAGE_MODE: LOCAL');
+    console.log('📊 TELEMETRY: ACTIVE');
 });
 
 // ========================================

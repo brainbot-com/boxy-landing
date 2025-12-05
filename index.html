@@ -1,53 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Boxy - Independent AI That's Yours</title>
-    <meta name="description" content="ChatGPT-level AI that runs on your desk, not in the cloud. No tracking, no limits, no subscriptions. €2,600 once. Own it forever.">
-    
+    <title>INDIE - The Open AI Platform</title>
+    <meta name="description"
+        content="A complete AI ecosystem on your desk. Open hardware, open software, infinite possibilities.">
+
     <!-- Open Graph / Social Media -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Boxy - Independent AI That's Yours">
-    <meta property="og:description" content="ChatGPT-level AI that runs on your desk, not in the cloud.">
+    <meta property="og:title" content="INDIE - The Open AI Platform">
+    <meta property="og:description" content="A complete AI ecosystem on your desk. Open hardware, open software.">
     <meta property="og:image" content="https://brainbot-com.github.io/boxy-landing/image2.png">
-    
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
-    
+
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+    <!-- Navigation -->
+    <nav class="nav-bar">
+        <div class="container nav-container">
+            <div class="nav-logo">INDIE_LABS</div>
+            <div class="nav-links">
+                <a href="#specs">SPECS</a>
+                <a href="#ecosystem">ECOSYSTEM</a>
+                <a href="#batch_01">BATCH_01</a>
+            </div>
+        </div>
+    </nav>
+
     <!-- Hero Section -->
     <section class="hero">
+        <!-- VIDEO BACKGROUND -->
+        <video class="hero-video-bg" autoplay loop muted playsinline>
+            <source src="background_video.mp4" type="video/mp4">
+        </video>
+        <!-- Overlay gradient -->
+        <div
+            style="position: absolute; inset: 0; background: linear-gradient(to bottom, transparent 50%, var(--bg-main)); z-index: 0;">
+        </div>
+
         <div class="container">
             <h1 class="hero-title">
-                CHATGPT-LEVEL AI<br>
-                THAT RUNS ON YOUR DESK,<br>
-                NOT IN THE CLOUD
+                INDIE<br>
+                PLATFORM_01<br>
+                [OPEN ECOSYSTEM]
             </h1>
             <p class="hero-subtitle">
-                No tracking. No limits. No subscriptions.<br>
-                €2,600 once. Own it forever.
+                // SYSTEM_STATUS: ONLINE<br>
+                Your box at home that runs decentralized intelligence.
+                Run ChatGPT-OSS, Qwen3, and Stable Diffusion natively.
+                No Cloud. No Rent. Pure Compute.
             </p>
-            
+
             <form class="email-form" id="heroForm">
-                <input 
-                    type="email" 
-                    placeholder="Enter your email" 
-                    required 
-                    class="email-input"
-                    id="heroEmail"
-                >
+                <input type="email" placeholder="ENTER_EMAIL_ADDRESS" required class="email-input" id="heroEmail">
                 <button type="submit" class="cta-button">
-                    Get Early Access
+                    INITIATE_ACCESS
                 </button>
             </form>
-            
+
             <p class="small-text">
-                Join 500+ people waiting for Boxy. Launching Q1 2026.
+                [BATCH_01: ALLOCATION_PENDING_Q1_2026]
             </p>
         </div>
     </section>
@@ -55,87 +75,105 @@
     <!-- Product Showcase -->
     <section class="product-showcase">
         <div class="container">
-            <img src="image2.png" alt="Boxy AI device - compact mini-PC running local AI" class="product-hero-image">
+            <img src="image2.png" alt="Indie Device" class="product-hero-image">
         </div>
     </section>
 
-    <!-- Value Props -->
-    <section class="value-props">
+    <!-- Ecosystem Section -->
+    <section class="value-props" id="ecosystem">
         <div class="container">
+            <h2 class="section-title">THE ECOSYSTEM</h2>
             <div class="prop-grid">
                 <div class="prop-card">
-                    <div class="prop-icon">🔒</div>
-                    <h3 class="prop-title">PRIVACY BY ARCHITECTURE</h3>
-                    <p class="prop-text">
-                        Your data physically cannot leave your device. No cloud accounts. 
-                        No API calls. No telemetry. You don't have to trust us—verify the architecture.
-                    </p>
-                </div>
-                
-                <div class="prop-card">
-                    <div class="prop-icon">💰</div>
-                    <h3 class="prop-title">OWN IT, DON'T RENT IT</h3>
-                    <p class="prop-text">
-                        €2,600 once vs. ChatGPT Plus at $240/year forever. 
-                        Break-even in 13 months. Free after that. Use it for 5-10 years like any appliance.
-                    </p>
-                </div>
-                
-                <div class="prop-card">
-                    <div class="prop-icon">∞</div>
-                    <h3 class="prop-title">UNLIMITED USAGE</h3>
-                    <p class="prop-text">
-                        No message caps. No rate limits. No "you've used your quota" warnings. 
-                        Run 10,000 queries in an hour if you want. It's your hardware.
-                    </p>
-                </div>
-                
-                <div class="prop-card">
                     <div class="prop-icon">⚡</div>
-                    <h3 class="prop-title">ACTUALLY SIMPLE</h3>
+                    <h3 class="prop-title">CORE_OS</h3>
                     <p class="prop-text">
-                        Plug in. Scan QR code with your phone. Start chatting in 60 seconds. 
-                        No Linux knowledge. No driver debugging. ChatGPT-level convenience with local-first privacy.
+                        A minimal, hardened Linux kernel optimized for inference.
+                        Zero overhead. Direct hardware access.
+                    </p>
+                </div>
+
+                <div class="prop-card">
+                    <div class="prop-icon">🔌</div>
+                    <h3 class="prop-title">PLUGIN_ARCHITECTURE</h3>
+                    <p class="prop-text">
+                        Docker-based extensions. Connect your IDE, home automation,
+                        or data pipelines via standardized APIs.
+                    </p>
+                </div>
+
+                <div class="prop-card">
+                    <div class="prop-icon">🌐</div>
+                    <h3 class="prop-title">P2P_MODEL_NET</h3>
+                    <p class="prop-text">
+                        Share fine-tunes and RAG indices encrypted over peer-to-peer
+                        networks. No central hub.
+                    </p>
+                </div>
+
+                <div class="prop-card">
+                    <div class="prop-icon">🔒</div>
+                    <h3 class="prop-title">AIRGRAPPED_MODE</h3>
+                    <p class="prop-text">
+                        Hardware kill-switch for networking.
+                        Complete isolation when working on sensitive IP.
                     </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- How It Works -->
-    <section class="how-it-works">
+    <!-- Technical Specs -->
+    <section class="how-it-works" id="specs">
         <div class="container">
-            <h2 class="section-title">HOW IT WORKS</h2>
-            
-            <div class="steps-container">
-                <div class="steps">
-                    <div class="step">
-                        <div class="step-number">1</div>
-                        <h3 class="step-title">Unbox & Plug In</h3>
-                        <p class="step-text">
-                            Compact mini-PC arrives pre-configured. Just plug in power and ethernet (or WiFi).
-                        </p>
-                    </div>
-                    
-                    <div class="step">
-                        <div class="step-number">2</div>
-                        <h3 class="step-title">Scan QR Code</h3>
-                        <p class="step-text">
-                            Open the app on your phone, scan the QR code shown on your screen. Done.
-                        </p>
-                    </div>
-                    
-                    <div class="step">
-                        <div class="step-number">3</div>
-                        <h3 class="step-title">Start Chatting</h3>
-                        <p class="step-text">
-                            ChatGPT-like interface. Fast responses. Persistent memory. All running locally.
-                        </p>
-                    </div>
+            <h2 class="section-title">TECHNICAL_SPECIFICATIONS</h2>
+
+            <div class="comparison-table" style="margin-top: 0;">
+                <div class="comparison-row header">
+                    <div class="comparison-cell">COMPONENT</div>
+                    <div class="comparison-cell">SPECIFICATION</div>
                 </div>
-                
-                <div class="product-detail-image">
-                    <img src="image.png" alt="Boxy device close-up showing compact design" class="detail-image">
+                <div class="comparison-row">
+                    <div class="comparison-cell">PROCESSOR</div>
+                    <div class="comparison-cell">Dual NPU-X (128 TOPS)</div>
+                </div>
+                <div class="comparison-row">
+                    <div class="comparison-cell">MEMORY</div>
+                    <div class="comparison-cell">64GB HBM2e Shared VRAM</div>
+                </div>
+                <div class="comparison-row">
+                    <div class="comparison-cell">STORAGE</div>
+                    <div class="comparison-cell">4TB NVMe Gen5 (Expandable)</div>
+                </div>
+                <div class="comparison-row">
+                    <div class="comparison-cell">CONNECTIVITY</div>
+                    <div class="comparison-cell">WiFi 7 / 10GbE LAN</div>
+                </div>
+            </div>
+
+            <div style="margin-top: 4rem; text-align: center;">
+                <h3 class="step-title">LLM BENCHMARKS</h3>
+                <div class="comparison-table" style="max-width: 600px;">
+                    <div class="comparison-row header">
+                        <div class="comparison-cell">MODEL</div>
+                        <div class="comparison-cell">TOKENS/SEC</div>
+                    </div>
+                    <div class="comparison-row">
+                        <div class="comparison-cell">ChatGPT-OSS 120b</div>
+                        <div class="comparison-cell highlight">25-30 T/S</div>
+                    </div>
+                    <div class="comparison-row">
+                        <div class="comparison-cell">Qwen3 30b</div>
+                        <div class="comparison-cell highlight">35-40 T/S</div>
+                    </div>
+                    <div class="comparison-row">
+                        <div class="comparison-cell">Qwen3 235b</div>
+                        <div class="comparison-cell highlight">~11 T/S</div>
+                    </div>
+                    <div class="comparison-row">
+                        <div class="comparison-cell">SDXL Turbo</div>
+                        <div class="comparison-cell highlight">0.8 SEC/IMG</div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -144,75 +182,75 @@
     <!-- Comparison -->
     <section class="comparison">
         <div class="container">
-            <h2 class="section-title">BOXY VS. CLOUD AI</h2>
-            
+            <h2 class="section-title">INDIE VS. RENTED CLOUD</h2>
+
             <div class="comparison-table">
                 <div class="comparison-row header">
-                    <div class="comparison-cell"></div>
-                    <div class="comparison-cell">ChatGPT / Claude</div>
-                    <div class="comparison-cell highlight">Boxy</div>
+                    <div class="comparison-cell">FEATURE</div>
+                    <div class="comparison-cell">PUBLIC CLOUD</div>
+                    <div class="comparison-cell highlight">INDIE PLATFORM</div>
                 </div>
-                
+
                 <div class="comparison-row">
-                    <div class="comparison-cell">Privacy</div>
-                    <div class="comparison-cell">Trust their policy</div>
-                    <div class="comparison-cell highlight">Physically local ✓</div>
+                    <div class="comparison-cell">DATA SOVEREIGNTY</div>
+                    <div class="comparison-cell">None (Their Servers)</div>
+                    <div class="comparison-cell highlight">100% (Your Desk)</div>
                 </div>
-                
+
                 <div class="comparison-row">
-                    <div class="comparison-cell">Cost</div>
-                    <div class="comparison-cell">$240/year forever</div>
-                    <div class="comparison-cell highlight">€2,600 once ✓</div>
+                    <div class="comparison-cell">COST MODEL</div>
+                    <div class="comparison-cell">Monthly Rent</div>
+                    <div class="comparison-cell highlight">One-Time Asset</div>
                 </div>
-                
+
                 <div class="comparison-row">
-                    <div class="comparison-cell">Usage Limits</div>
-                    <div class="comparison-cell">40-80 msg/3 hours</div>
-                    <div class="comparison-cell highlight">Unlimited ✓</div>
+                    <div class="comparison-cell">CENSORSHIP</div>
+                    <div class="comparison-cell">High</div>
+                    <div class="comparison-cell highlight">None (Uncensored Models)</div>
                 </div>
-                
+
                 <div class="comparison-row">
-                    <div class="comparison-cell">Setup Time</div>
-                    <div class="comparison-cell">5 minutes (cloud)</div>
-                    <div class="comparison-cell highlight">60 seconds (local) ✓</div>
+                    <div class="comparison-cell">LATENCY</div>
+                    <div class="comparison-cell">Variable / Network Dependent</div>
+                    <div class="comparison-cell highlight">Instant / Local Bus</div>
                 </div>
-                
+
                 <div class="comparison-row">
-                    <div class="comparison-cell">Your Data</div>
-                    <div class="comparison-cell">On their servers</div>
-                    <div class="comparison-cell highlight">On your device ✓</div>
+                    <div class="comparison-cell">CUSTOMIZATION</div>
+                    <div class="comparison-cell">Limited API</div>
+                    <div class="comparison-cell highlight">Full Kernel Access</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Social Proof / Who It's For -->
+    <!-- Who It's For -->
     <section class="who-its-for">
         <div class="container">
-            <h2 class="section-title">WHO IT'S FOR</h2>
-            
+            <h2 class="section-title">TARGET_OPERATORS</h2>
+
             <div class="audience-grid">
                 <div class="audience-card">
-                    <h3 class="audience-title">Privacy-Conscious Professionals</h3>
+                    <h3 class="audience-title">MACHINE_LEARNING_ENGINEERS</h3>
                     <p class="audience-text">
-                        Journalists, lawyers, therapists, executives. Use AI for client work 
-                        without violating confidentiality, privilege, or HIPAA.
+                        Test quantization methods, finetune LoRAs locally, and deploy agents
+                        without incurring cloud GPU costs.
                     </p>
                 </div>
-                
+
                 <div class="audience-card">
-                    <h3 class="audience-title">Autonomy-Seeking Individuals</h3>
+                    <h3 class="audience-title">PRIVACY_ADVOCATES</h3>
                     <p class="audience-text">
-                        Creators, writers, privacy advocates. Own the tool. Control your data. 
-                        Refuse the subscription economy. Never be the product.
+                        Journalists, whistleblowers, and legal professionals requiring
+                        absolute confidentiality. Airgap ready.
                     </p>
                 </div>
-                
+
                 <div class="audience-card">
-                    <h3 class="audience-title">Trust-Requiring Organizations</h3>
+                    <h3 class="audience-title">CREATIVE_TECHNOLOGISTS</h3>
                     <p class="audience-text">
-                        Small businesses, consultancies, healthcare providers. Give your team 
-                        ChatGPT-level AI without ChatGPT-level risk.
+                        Build immersive installations and generative art pipelines
+                        unconstrained by API rate limits or censorship.
                     </p>
                 </div>
             </div>
@@ -222,79 +260,38 @@
     <!-- FAQ -->
     <section class="faq">
         <div class="container">
-            <h2 class="section-title">FREQUENTLY ASKED QUESTIONS</h2>
-            
+            <h2 class="section-title">FAQ / PROTOCOLS</h2>
+
             <div class="faq-list">
                 <details class="faq-item">
-                    <summary class="faq-question">How is this different from ChatGPT?</summary>
+                    <summary class="faq-question">IS THE HARDWARE UPGRADABLE?</summary>
                     <div class="faq-answer">
-                        ChatGPT runs in OpenAI's cloud—your data goes to their servers. 
-                        Boxy runs entirely on hardware you own in your home. Your conversations, 
-                        documents, and ideas never leave your device. No cloud. No tracking. No limits.
+                        Yes. Standard NVMe slots and SODIMM memory (up to 192GB).
+                        The NPU module is socketed for future gen upgrades.
                     </div>
                 </details>
-                
+
                 <details class="faq-item">
-                    <summary class="faq-question">Do I need technical skills to set this up?</summary>
+                    <summary class="faq-question">WHICH MODELS ARE SUPPORTED?</summary>
                     <div class="faq-answer">
-                        No. Boxy is designed to be as simple as setting up a streaming device. 
-                        Plug it in, scan a QR code with your phone, and start chatting. 
-                        No Linux knowledge. No configuration files. It just works.
+                        Any GGUF or EXL2 format model. We maintain a verified registry
+                        of optimized quants for Llama 3, Mixtral, Qwen, and Stable Diffusion XL.
                     </div>
                 </details>
-                
+
                 <details class="faq-item">
-                    <summary class="faq-question">How good is the AI quality compared to GPT-4?</summary>
+                    <summary class="faq-question">CAN I SSH INTO IT?</summary>
                     <div class="faq-answer">
-                        Boxy runs state-of-the-art open-weight models (similar to Llama 3.3 70B) 
-                        optimized for the hardware. For most tasks—writing, coding, research, 
-                        brainstorming—it's comparable to GPT-4. We're honest about trade-offs, 
-                        but you get 90% of the capability with 100% of the privacy.
+                        Absolutely. It's your machine. Root access is provided out of the box.
+                        Wipe our OS and install Arch if you want.
                     </div>
                 </details>
-                
+
                 <details class="faq-item">
-                    <summary class="faq-question">What are the hardware specs?</summary>
+                    <summary class="faq-question">SHIPPING TIMELINE?</summary>
                     <div class="faq-answer">
-                        AMD Ryzen AI Max+ 395 (16 cores), 128GB unified RAM, 2TB SSD, 
-                        integrated GPU (40 RDNA 3.5 compute units). Compact mini-PC form factor 
-                        (similar to Mac Mini). Runs cool and quiet (~120W typical).
-                    </div>
-                </details>
-                
-                <details class="faq-item">
-                    <summary class="faq-question">Are there any ongoing costs or subscriptions?</summary>
-                    <div class="faq-answer">
-                        No. You pay €2,600 once and own it forever. No monthly fees for core functionality. 
-                        Optional: €5-10/month for automatic cloud backups (your choice). 
-                        Electricity costs are minimal (~€3-5/month if running 24/7).
-                    </div>
-                </details>
-                
-                <details class="faq-item">
-                    <summary class="faq-question">Can I use it on my phone?</summary>
-                    <div class="faq-answer">
-                        Yes! Boxy includes mobile apps (iOS and Android) that connect to your device 
-                        over your local network or VPN. Chat from anywhere in your home, or securely 
-                        from outside via encrypted tunnel.
-                    </div>
-                </details>
-                
-                <details class="faq-item">
-                    <summary class="faq-question">Is it open source?</summary>
-                    <div class="faq-answer">
-                        The foundation is built on open-source components (Linux, open-weight models, OpenWebUI). 
-                        You can inspect what's running, modify the stack, or replicate it yourself. 
-                        Our value is the curation—we've saved you 200+ hours of integration and testing.
-                    </div>
-                </details>
-                
-                <details class="faq-item">
-                    <summary class="faq-question">When will it ship?</summary>
-                    <div class="faq-answer">
-                        We're launching a crowdfunding campaign in Q1 2026. First units ship Q2-Q3 2026. 
-                        Join the waitlist to get launch pricing (€2,400 vs. €2,600 retail) and 
-                        priority access to first batch.
+                        Batch 01 production starts Q1 2026.
+                        Reserving a slot now guarantees first-wave allocation.
                     </div>
                 </details>
             </div>
@@ -302,28 +299,22 @@
     </section>
 
     <!-- Final CTA -->
-    <section class="final-cta">
+    <section class="final-cta" id="batch_01">
         <div class="container">
             <h2 class="cta-title">
-                STOP RENTING AI.<br>
-                OWN IT FOR LESS THAN 2 YEARS OF CHATGPT PLUS.
+                CLAIM YOUR UNIT<br>
+                BATCH_01 CLOSING SOON
             </h2>
-            
+
             <form class="email-form" id="footerForm">
-                <input 
-                    type="email" 
-                    placeholder="Enter your email" 
-                    required 
-                    class="email-input"
-                    id="footerEmail"
-                >
+                <input type="email" placeholder="ENTER_EMAIL_ADDRESS" required class="email-input" id="footerEmail">
                 <button type="submit" class="cta-button">
-                    Join the Waitlist
+                    SECURE_ALLOCATION
                 </button>
             </form>
-            
+
             <p class="small-text">
-                Early access. Launch pricing. Priority shipping.
+                Priority shipping for early supporters.
             </p>
         </div>
     </section>
@@ -333,23 +324,24 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">
-                    <strong>BOXY</strong>
-                    <p>Independent AI That's Yours</p>
+                    <strong>INDIE_LABS</strong>
+                    <p>Decentralized Compute Systems</p>
                 </div>
-                
+
                 <div class="footer-links">
-                    <a href="mailto:hello@boxy.ai">Contact</a>
-                    <a href="privacy.html">Privacy Policy</a>
-                    <a href="https://github.com/brainbot-com/localai">GitHub</a>
+                    <a href="mailto:sysadmin@indie.ai">CONTACT</a>
+                    <a href="privacy.html">PROTOCOLS</a>
+                    <a href="https://github.com/brainbot-com/indie-core">GITHUB</a>
                 </div>
             </div>
-            
+
             <p class="footer-note">
-                Made with ❤️ in Europe. No tracking. No cookies. Just a simple landing page.
+                // NO_TRACKING // NO_COOKIES // PURE_HTML
             </p>
         </div>
     </footer>
 
     <script src="script.js"></script>
 </body>
+
 </html>
