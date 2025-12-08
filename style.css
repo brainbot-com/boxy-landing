@@ -97,7 +97,15 @@ body {
     justify-content: space-between;
     align-items: center;
     flex-direction: row !important;
-    /* Force row */
+    padding: 0 var(--spacing-xl);
+    /* Match hero glass panel padding */
+    width: 100%;
+    /* Full width */
+    max-width: none;
+    /* overrides default container max-width */
+    border-left: none;
+    /* Nav doesn't need borders */
+    border-right: none;
 }
 
 .nav-logo {
@@ -140,10 +148,10 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: left;
     /* Align left for tech look */
     position: relative;
-    border-bottom: var(--border-width) solid var(--border-color);
+    border-bottom: none;
+    /* Removed hard cut */
     overflow: hidden;
     /* For video bg */
 }
@@ -160,18 +168,46 @@ body {
 }
 
 .hero .container {
-    background: rgba(244, 244, 240, 0.85);
-    /* Semi-transparent warm white */
-    backdrop-filter: blur(5px);
-    /* Frosted glass effect */
     padding: var(--spacing-xl) var(--spacing-sm);
     flex: 1;
     position: relative;
     z-index: 1;
     display: flex;
-    /* Ensure flex behavior */
     flex-direction: column;
     justify-content: center;
+}
+
+/* Hero Layout Split */
+.hero .hero-container-split {
+    background: transparent;
+    backdrop-filter: none;
+    padding: 0;
+    width: 100%;
+    /* Constrain width but anchor left */
+    max-width: 1400px;
+    margin-left: 0;
+    margin-right: auto;
+    border-left: none;
+    border-right: none;
+    flex-direction: row;
+    align-items: stretch;
+}
+
+.hero-glass-panel {
+    flex: 2;
+    width: 66.66%;
+    max-width: 66.66%;
+    /* More transparent for frosting, stronger blur */
+    background: rgba(244, 244, 240, 0.65);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: var(--spacing-xl) var(--spacing-xl);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    border-right: var(--border-width) solid var(--border-color);
+    border-left: var(--border-width) solid var(--border-color);
 }
 
 /* Hero Typography */
@@ -770,6 +806,20 @@ body {
     .email-input,
     .cta-button {
         width: 100%;
+    }
+
+    /* Hero Split Responsive */
+    .hero .hero-container-split {
+        flex-direction: column;
+    }
+
+    .hero-glass-panel {
+        width: 100%;
+        max-width: 100%;
+        border-right: none;
+        border-bottom: var(--border-width) solid var(--border-color);
+        flex: 1;
+        /* Allow it to take necessary height */
     }
 }
 
